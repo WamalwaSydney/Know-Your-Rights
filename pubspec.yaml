@@ -1,0 +1,77 @@
+name: legal_ai
+description: An AI legal assistant app built with Flutter and Firebase.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ✅ Firebase Core & Services (Firebase v3-compatible versions)
+  firebase_core: ^3.4.0
+  firebase_auth: ^5.1.0
+  cloud_firestore: ^5.0.2
+  firebase_storage: ^12.1.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+  flutter_markdown: ^0.6.18
+  pdf: ^3.10.7
+  printing: ^5.12.0
+  share_plus: ^7.2.1
+  hydrated_bloc: ^9.1.5
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+  syncfusion_flutter_pdf: ^25.1.35
+  permission_handler: ^11.1.0
+  open_file: ^3.2.1
+  docx_to_text: ^1.0.1          # Extract text from Word documents
+
+
+
+
+  # ✅ Google Sign-In
+  google_sign_in: ^6.2.1
+
+  # ✅ State Management
+  provider: ^6.1.1
+
+
+  # ✅ HTTP & Networking
+  http: ^1.2.0
+
+  # ✅ Local Storage
+  shared_preferences: ^2.2.2
+
+  # ✅ File Handling
+  file_picker: ^10.3.3
+  url_launcher: ^6.2.3
+
+  # ✅ Utilities
+  intl: ^0.19.0
+  uuid: ^4.0.0
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/google_logo.png
+
+
+  # ✅ Uncomment and configure fonts if needed
+  # fonts:
+  #   - family: Roboto
+  #     fonts:
+  #       - asset: fonts/Roboto-Regular.ttf
+  #       - asset: fonts/Roboto-Bold.ttf
+  #         weight: 700

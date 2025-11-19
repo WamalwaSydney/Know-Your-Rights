@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35922963589",
+    "project_id": "know-your-rights-2c062",
+    "storage_bucket": "know-your-rights-2c062.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35922963589:android:dd7999e17fd09f77770dec",
+        "android_client_info": {
+          "package_name": "com.example.legal_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYPIT26Wn-fIO32Jpjd_Qcf1bB6F2AerA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
