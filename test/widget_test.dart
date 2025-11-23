@@ -1,30 +1,143 @@
-// // This is a basic Flutter widget test.
-// //
-// // To perform an interaction with a widget in your test, use the WidgetTester
-// // utility in the flutter_test package. For example, you can send tap and scroll
-// // gestures. You can also use WidgetTester to find child widgets in the widget
-// // tree, read text, and verify that the values of widget properties are correct.
-//
-// import 'package:flutter/material.dart';
-// import 'package:flutter_test/flutter_test.dart';
-//
-// import 'package:legal_ai/main.dart';
-//
-// void main() {
-//   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-//     // Build our app and trigger a frame.
-//     await tester.pumpWidget(const MyApp());
-//
-//     // Verify that our counter starts at 0.
-//     expect(find.text('0'), findsOneWidget);
-//     expect(find.text('1'), findsNothing);
-//
-//     // Tap the '+' icon and trigger a frame.
-//     await tester.tap(find.byIcon(Icons.add));
-//     await tester.pump();
-//
-//     // Verify that our counter has incremented.
-//     expect(find.text('0'), findsNothing);
-//     expect(find.text('1'), findsOneWidget);
-//   });
-// }
+// test/widget_test.dart
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:legal_ai/widgets/chat_bubble.dart';
+import 'package:legal_ai/core/constants.dart';
+
+void main() {
+  group('ChatBubble Widget Tests', () {
+    testWidgets('displays user message correctly', (WidgetTester tester) async {
+      const testMessage = 'Hello, this is a test message';
+
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: testMessage,
+              isUser: true,
+            ),
+          ),
+        ),
+      );
+
+      expect(find.text(testMessage), findsOneWidget);
+      expect(find.byType(ChatBubble), findsOneWidget);
+    });
+
+    testWidgets('displays AI message correctly', (WidgetTester tester) async {
+      const testMessage = 'AI response message';
+
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: testMessage,
+              isUser: false,
+            ),
+          ),
+        ),
+      );
+
+      expect(find.text(testMessage), findsOneWidget);
+      expect(find.byType(ChatBubble), findsOneWidget);
+    });
+
+    testWidgets('user message aligns to the right', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: 'User message',
+              isUser: true,
+            ),
+          ),
+        ),
+      );
+
+      final alignWidget = tester.widget<Align>(find.byType(Align));
+      expect(alignWidget.alignment, Alignment.centerRight);
+    });
+
+    testWidgets('AI message aligns to the left', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: 'AI message',
+              isUser: false,
+            ),
+          ),
+        ),
+      );
+
+      final alignWidget = tester.widget<Align>(find.byType(Align));
+      expect(alignWidget.alignment, Alignment.centerLeft);
+    });
+
+    testWidgets('user message has correct background color', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: 'User message',
+              isUser: true,
+            ),
+          ),
+        ),
+      );
+
+      final container = tester.widget<Container>(find.byType(Container));
+      final decoration = container.decoration as BoxDecoration;
+      expect(decoration.color, kUserChatBubbleColor);
+    });
+
+    testWidgets('AI message has correct background color', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: 'AI message',
+              isUser: false,
+            ),
+          ),
+        ),
+      );
+
+      final container = tester.widget<Container>(find.byType(Container));
+      final decoration = container.decoration as BoxDecoration;
+      expect(decoration.color, kAIChatBubbleColor);
+    });
+
+    testWidgets('user message has correct text color', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: 'User message',
+              isUser: true,
+            ),
+          ),
+        ),
+      );
+
+      final textWidget = tester.widget<Text>(find.text('User message'));
+      expect(textWidget.style?.color, kUserChatTextColor);
+    });
+
+    testWidgets('AI message has correct text color', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: ChatBubble(
+              message: 'AI message',
+              isUser: false,
+            ),
+          ),
+        ),
+      );
+
+      final textWidget = tester.widget<Text>(find.text('AI message'));
+      expect(textWidget.style?.color, kAIChatTextColor);
+    });
+  });
+}
