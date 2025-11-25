@@ -4,9 +4,9 @@ A comprehensive mobile application built with Flutter that provides AI-powered l
 
 ## 📱 Demo
 
-**Demo Video:** [https://youtu.be/lNI8TIl0it8?feature=shared](https://youtu.be/nJwfUVrIj3s)
+**Demo Video:** [(https://youtu.be/nJwfUVrIj3s)]
 
-**GitHub Repository:** [https://github.com/Afsaumutoniwase/jaclean.git](https://github.com/WamalwaSydney/Know-Your-Rights.git)
+**GitHub Repository:** [(https://github.com/WamalwaSydney/Know-Your-Rights.git)]
 
 ## 🎯 Project Overview
 
