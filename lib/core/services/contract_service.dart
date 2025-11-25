@@ -11,8 +11,8 @@ class ContractService {
   final String _userId = FirebaseAuth.instance.currentUser?.uid ?? 'mock_user';
 
   // HARD-CODED Groq API KEY
-  // static const String groqApiKey =
-  //     "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";
+   static const String groqApiKey =
+       "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";
 
   static const String groqUrl = "https://api.groq.com/openai/v1/chat/completions";
   static const String groqModel = "llama-3.1-8b-instant";

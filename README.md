@@ -521,7 +521,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For questions or issues:
 - Create an issue on GitHub
 - Email: support@knowyourrights.app
-- Documentation: [Wiki](https://github.com/Afsaumutoniwase/jaclean/wiki)
+- Documentation: [Wiki](https://github.com/WamalwaSydney/Know-Your-Rights.git)
 
 ## 🗺️ Roadmap
 

@@ -1,8 +1,8 @@
 // lib/core/config/api_config.dart
 class ApiConfig {
   // Groq API Configuration (Hardcoded)
-  // static const String groqApiKey =
-  //     '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';
+   static const String groqApiKey =
+       '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';
 
   static const String groqBaseUrl = 'https://api.groq.com/openai/v1';
   static const String groqModel = 'llama-3.1-8b-instant';
